@@ -9,10 +9,6 @@ var gGame = {
     markedCount:0,
     secsPassed:0
 }
-var gLevel = {
-    SIZE: 4,
-    MINES: 2
-}
 
 function onInit() {
     gGame.isOn = true
@@ -42,6 +38,7 @@ function createBoard() {
         }
     }
     board[3][3].isMine = true
+    board[2][1].isMine = true
     console.log(board)
     return board
 }
@@ -85,7 +82,6 @@ function onRight(e, i, j) {
 }
 
 function checkVictory() {
-    var minesCounter = 0 
     for (var i = 0; i < gBoard.length; i++) {
         for (var j = 0; j < gBoard[0].length; j++) {
             var cell = gBoard[i][j]
