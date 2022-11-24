@@ -31,7 +31,6 @@ function onInit() {
     if (localStorage.record) {
         showHighScores(localStorage.record.split(','))
     }
-    console.log(localStorage.record.split(','))
     resetGame()
     clearInterval(gInterval)
     // document.querySelector('.record').innerText = ''
