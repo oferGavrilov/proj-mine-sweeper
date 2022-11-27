@@ -25,51 +25,21 @@ function shuffle(items) {
     return items;
 }
 
-// numbers.sort( function( a , b){
-//     if(a > b) return 1;
-//     if(a < b) return -1;
-//     return 0;
-// });
-
-
 function getTime() {
     return new Date().toString().split(' ')[4];
-}
-
-function getRandomColor() {
-    const letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
-
-
-function createMat(ROWS, COLS) {
-    const mat = []
-    for (var i = 0; i < ROWS; i++) {
-        const row = []
-        for (var j = 0; j < COLS; j++) {
-            row.push('')
-        }
-        mat.push(row)
-    }
-    return mat
 }
 
 function getEmptyCells(board) {
     const emptyCells = []
     for (var i = 0; i < board.length; i++) {
         for (var j = 0; j < board[i].length; j++) {
-            if (board[i][j].isShown || board[i][j].isMine) continue
-
-            emptyCells.push({ i, j })
+            if (!board[i][j].isShown && !board[i][j].isMine) {
+                emptyCells.push({ i, j })
+            }
         }
     }
     return (shuffle(emptyCells))
 }
-
 
 function emptyCellHint(board) {
     const emptyCells = []
@@ -77,18 +47,15 @@ function emptyCellHint(board) {
     for (var i = 0; i < board.length; i++) {
         for (var j = 0; j < board[i].length; j++) {
             if (board[i][j].isShown) continue
+            if (board[i][j].isMine) continue
             var negsCounter = minesNegsCount(i, j)
-            if (negsCounter === 0) {
+            if (negsCounter === 0 || negsCounter === 1) {
                 emptyCells.push({ i, j })
             }
         }
     }
-    // console.log(emptyCells)
-    // console.log(drawNum(shuffle( emptyCells)))
     return (drawNum(shuffle(emptyCells)))
 }
-
-
 
 function renderBoard(board) {
     var strHTML = ''
@@ -99,12 +66,9 @@ function renderBoard(board) {
             strHTML += `<td data-i="${i}" data-j="${j}" onclick="onCellClicked(this, ${i}, ${j})" class="${className} ">${cell}</td>`
         }
         strHTML += '</tr>'
-
     }
     const elBoard = document.querySelector('tbody.board')
     elBoard.innerHTML = strHTML
-
-
 }
 
 function renderCell(location, value) {
@@ -115,17 +79,11 @@ function renderCell(location, value) {
 
 }
 
-
 function renderCell(location, value) {
     // Select the elCell and set the value
     const elCell = document.querySelector(`.cell-${location.i}-${location.j}`)
     elCell.innerHTML = value
 }
-// function renderColor(location, value) {
-//     // Select the elCell and set the value
-//     const elCell = document.querySelector(`.cell-${location.i}-${location.j}`)
-//     elCell.style.backgroundColor = value
-// }
 
 function getClassName(location) {
     const cellClass = 'cell-' + location.i + '-' + location.j
@@ -147,32 +105,6 @@ function countNeighbors(cellI, cellJ, mat) {
     return neighborsCount
 }
 
-
-
-
-function onHandleKey(event) {
-    const i = gGamerPos.i
-    const j = gGamerPos.j
-    console.log('event.key:', event.key)
-
-    switch (event.key) {
-        case 'ArrowLeft':
-            moveTo(i, j - 1)
-            break
-        case 'ArrowRight':
-            moveTo(i, j + 1)
-            break
-        case 'ArrowUp':
-            moveTo(i - 1, j)
-            break
-        case 'ArrowDown':
-            moveTo(i + 1, j)
-            break
-    }
-    // }
-
-}
-
 function showHints() {
     for (var i = 1; i <= 3; i++) {
         document.querySelector(`.hint-${i}`).classList.remove('hidden')
@@ -185,6 +117,7 @@ function showElement(selector) {
 function hideElement(selector) {
     document.querySelector(`${selector}`).classList.add('hidden')
 }
+
 
 function showNegs(cellI, cellJ) {
     for (var i = cellI - 1; i <= cellI + 1; i++) {
