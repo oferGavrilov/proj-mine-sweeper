@@ -12,7 +12,7 @@
 <body onload="onInit()">
     <div class="container">
         <div class="difficult">
-            <button class="btn easy" onclick="difficult()">Easy</button>
+            <button class="btn easy" onclick="difficult(this)">Easy</button>
             <button class="btn medium" onclick="difficult(this)">Medium</button>
             <button class="btn hard" onclick="difficult(this)">Hard</button>
         </div>
@@ -43,6 +43,14 @@
                 <tr><span class="record"></span></tr>
             </table>
         </div>
+        <!-- <div>
+            <table>
+                <tr>Easy:
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+            </table>
+        </div> -->
     </footer>
     <script src="js/utils.js"></script>
     <script src="js/main.js"></script>
