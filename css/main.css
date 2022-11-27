@@ -4,11 +4,8 @@ body {
 }
 
 .container {
-    /* height: 850px;
-    padding-top: 20px;
-    width: 1000px; */
     padding: 20px;
-    height: 100vh;
+    height: 100%;
     margin:20px auto;
     background-color: rgb(77, 67, 67);
     min-height: 780px;
@@ -18,8 +15,6 @@ table{
     border-spacing: 10px;
     text-align: center;
     margin: auto ;
-    /* min-height: 520px;
-    min-width: 520px; */
 }
 td {
     width: 50px;
