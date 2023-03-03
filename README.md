@@ -8,6 +8,6 @@ And finally we got a full responsive web application and a very addictive game ð
 
 Here's a taste of the game
 
-(css/imgs/minesweeper.png)
-(css/imgs/victory.png)
-(css/imgs/mobile.png)
+[Minesweeper](css/imgs/minesweeper.png)
+[Minesweeper](css/imgs/victory.png)
+[Minesweeper](css/imgs/mobile.png)
