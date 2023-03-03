@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Mine Sweeper</title>
+</head>
+
+<body onload="onInit()">
+    <div class="container">
+        <div class="difficult">
+            <button class="btn easy" onclick="difficult(this)">Easy</button>
+            <button class="btn medium" onclick="difficult(this)">Medium</button>
+            <button class="btn hard" onclick="difficult(this)">Hard</button>
+        </div>
+        <div class="status">
+            <h2>Lifes: <span class="lives">2</span></h2>
+            <button class="emoji" onclick="onInit()">😌</button>
+            <h2><span class="timer">0:000</span></h2>
+        </div>
+        <div class="modal">
+            <h1>Game Over!</h1>
+        </div>
+        <div class="status-game">
+            <h2>Shown 👀 : <span class="shown-counter">0</span></h2>
+            <div class="hint">
+                <button class="hint-1" onclick="onHintClick(this)">💡</button>
+                <button class="hint-2" onclick="onHintClick(this)">💡</button>
+                <button class="hint-3" onclick="onHintClick(this)">💡</button>
+            </div>
+            <h2>Marked 🚩 : <span class="marked-counter">0</span></h2>
+        </div>
+        <table class="container-matrix"></table>
+    </div>
+    <footer>
+        <h1>Ofer Gavrilov</h1>
+        <div class="high-scores">
+            <h2>High Score:</h2>
+            <table class="scores">
+                <tr><span class="record"></span></tr>
+            </table>
+        </div>
+    </footer>
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

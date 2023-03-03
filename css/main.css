@@ -1,0 +1,120 @@
+body {
+    background-color: gray;
+    font-family: 'Fuzzy Bubbles', cursive;
+}
+
+.container {
+    padding: 20px;
+    height: 100vh;
+    margin:20px auto;
+    background-color: rgb(77, 67, 67);
+    min-height: 780px;
+}
+table{
+    max-height: 500px;
+    border-spacing: 10px;
+    text-align: center;
+    margin: auto ;
+}
+td {
+    width: 50px;
+    min-height: 30px;
+    max-height: 60px;
+    height: 35px;
+    border-radius: 4px;
+    border: 1px solid black;
+    background-color: beige;
+    cursor: pointer;
+}
+
+.shown {
+    background-color: rgb(202, 214, 150);
+    cursor: no-drop;
+}
+.modal{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 20px;
+    color: beige;
+}
+
+.emoji{
+    display: flex;
+    margin: auto;
+    text-align: center;
+    background-color:rgb(77, 67, 67);
+    border: none;
+    font-size: 40px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.selected {
+    background-color: yellow;
+    color: rgb(176, 33, 33);
+}
+
+.status{
+    display: flex;
+    justify-content: space-between;
+    padding:0 20px ;
+    font-size: 1.5em;
+    font-family: 'Fuzzy Bubbles', cursive;
+    color: beige;
+}
+
+.difficult{
+    text-align: center;
+}
+.btn{
+    font-size: 30px;
+    height: 50px;
+    width: 120px;
+    border: 1px solid rgb(77, 67, 67);
+    border-radius: 12px;
+    margin: 0 30px 0 30px;
+    background-color:beige ;
+    color: rgb(77, 67, 67);
+    cursor: pointer;
+}
+.btn:hover{
+    transition: 0.5s;
+    background-color: rgb(77, 67, 67);
+    color:beige;
+    border-color: beige;
+}
+
+.high-scores{
+    text-align: center;
+    color: beige;
+}
+.high-scores h2{
+    text-decoration-line: underline;
+}
+
+.scores{
+    font-size: 26px;
+    letter-spacing: 3px;
+}
+
+.status-game{
+    color: beige;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hint button{
+    background-color: rgb(77, 67, 67);
+    border: none;
+    font-size: 36px;
+    cursor: pointer;
+}
+footer{
+    color: beige;
+}
+
