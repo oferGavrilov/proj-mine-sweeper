@@ -1,0 +1,190 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 12px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+.main-container {
+    padding: 20px 10px;
+    min-height: calc(100vh - 70px);
+    padding-bottom: 100px;
+    background-color: #6b705c;
+}
+
+table {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    text-align: center;
+    border-spacing: 10px;
+}
+
+td {
+    min-width: 19px;
+    max-width: 19px;
+    height: 35px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid black;
+    background-color: beige;
+    cursor: pointer;
+}
+
+.shown {
+    background-color: rgb(202, 214, 150);
+    cursor: no-drop;
+}
+
+.modal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 20px;
+    color: beige;
+}
+
+.emoji {
+    display: flex;
+    margin: auto;
+    text-align: center;
+    background-color: inherit;
+    border: none;
+    font-size: 40px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.selected {
+    background-color: yellow;
+    color: rgb(176, 33, 33);
+}
+
+.status {
+    display: flex;
+    padding: 10px 0;
+    justify-content: space-between;
+    font-size: 1.5em;
+    font-family: 'Fuzzy Bubbles', cursive;
+    color: beige;
+}
+
+.difficult {
+    text-align: center;
+}
+
+.btn {
+    font-size: 14px;
+    padding: 8px 20px;
+    border: 1px solid rgb(77, 67, 67);
+    border-radius: 8px;
+    margin: 0 8px;
+    background-color: beige;
+    color: rgb(77, 67, 67);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    background-color: #a5a58d;
+    color: beige;
+    border-color: beige;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #b7b7a4;
+}
+
+.status-game {
+    color: beige;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.shown-status {
+    display: inline;
+    justify-content: flex-start;
+}
+
+.hint {
+    display: flex;
+    justify-content: center;
+}
+
+.hint button {
+    background-color: inherit;
+    border: none;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+footer {
+    font-size: 14px;
+    text-align: center;
+    color: beige;
+    padding: 10px;
+}
+
+.high-scores {
+    color: rgb(77, 67, 67);
+}
+
+.high-scores h2 {
+    text-decoration-line: underline;
+}
+
+.scores {
+    font-size: 26px;
+    letter-spacing: 3px;
+}
+
+
+
+
+@media (min-width: 768px) {
+    body {
+        font-size: 16px;
+
+    }
+
+    .main-container {
+        padding: 20px 40px;
+    }
+
+    .difficult .btn {
+        font-size: 24px;
+    }
+
+    td {
+        min-width: 50px;
+        max-width: 50px;
+        height: 50px;
+    }
+}
+
